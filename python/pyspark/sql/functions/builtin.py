@@ -7062,9 +7062,9 @@ def count_if(col: "ColumnOrName") -> Column:
 
 @_try_remote_functions
 def histogram_numeric(col: "ColumnOrName", nBins: "ColumnOrName") -> Column:
-    """Computes a histogram on numeric 'col' using nb bins.
+    """Computes a histogram on numeric 'col' using 'nBins' bins.
     The return value is an array of (x,y) pairs representing the centers of the
-    histogram's bins. As the value of 'nb' is increased, the histogram approximation
+    histogram's bins. As the value of 'nBins' is increased, the histogram approximation
     gets finer-grained, but may yield artifacts around outliers. In practice, 20-40
     histogram bins appear to work well, with more bins being required for skewed or
     smaller datasets. Note that this function creates a histogram with non-uniform
@@ -7085,7 +7085,7 @@ def histogram_numeric(col: "ColumnOrName", nBins: "ColumnOrName") -> Column:
     Returns
     -------
     :class:`~pyspark.sql.Column`
-        a histogram on numeric 'col' using nb bins.
+        a histogram on numeric 'col' using 'nBins' bins.
 
     Examples
     --------
